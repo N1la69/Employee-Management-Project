@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddEmployee from "../components/AddEmployee";
 import EmployeeTable from "../components/EmployeeTable";
 import Navbar from "../components/Navbar";
+import UpdateEmployee from "../components/UpdateEmployee";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
               <Route index element={<EmployeeTable />} />
               <Route path="/" element={<EmployeeTable />} />
               <Route path="/addEmployee" element={<AddEmployee />} />
+              <Route path="/updateEmployee/:id" element={<UpdateEmployee />} />
             </Routes>
           </div>
         </div>

@@ -38,6 +38,11 @@ const EmployeeTable = () => {
       });
   };
 
+  const editEmp = (e, id) => {
+    e.preventDefault();
+    navigate(`/updateEmployee/${id}`);
+  };
+
   return (
     <>
       <button
@@ -57,7 +62,10 @@ const EmployeeTable = () => {
         {!loading && (
           <tbody>
             {employees.map((employee) => (
-              <tr className="hover:bg-white transition-all duration-200">
+              <tr
+                className="hover:bg-white transition-all duration-200"
+                key={employee.id}
+              >
                 <td className="text-left px-6 py-4 whitespace-nowrap">
                   {employee.name}
                 </td>
@@ -68,7 +76,12 @@ const EmployeeTable = () => {
                   {employee.phone}
                 </td>
                 <td className="text-left px-6 py-4 whitespace-nowrap flex space-x-3 font-semibold">
-                  <a className="cursor-pointer hover:text-blue-500">Edit</a>
+                  <a
+                    className="cursor-pointer hover:text-blue-500"
+                    onClick={(e, id) => editEmp(e, employee.id)}
+                  >
+                    Edit
+                  </a>
                   <a
                     className="cursor-pointer text-red-400 hover:text-red-500"
                     onClick={(e, id) => deleteEmp(e, employee.id)}
