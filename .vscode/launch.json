@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-EmpProjectApplication<emp_project>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.nilanjan.emp_project.EmpProjectApplication",
+      "projectName": "emp_project",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
