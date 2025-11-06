@@ -17,6 +17,7 @@ public class EmpServiceImpl implements EmpService {
     @Autowired
     private EmpRepo empRepo;
 
+    @SuppressWarnings("null")
     @Override
     public String createEmployee(Employee employee) {
         EmpEntity empEntity = new EmpEntity();
@@ -43,8 +44,10 @@ public class EmpServiceImpl implements EmpService {
         return employees;
     }
 
+    @SuppressWarnings("null")
     @Override
     public boolean deleteEmployee(Long id) {
+        @SuppressWarnings("null")
         EmpEntity emp = empRepo.findById(id).get();
         
         empRepo.delete(emp);
@@ -53,6 +56,7 @@ public class EmpServiceImpl implements EmpService {
 
     @Override
     public String updateEmployee(Long id, Employee employee) {
+        @SuppressWarnings("null")
         EmpEntity existingEmp = empRepo.findById(id).get();
 
         existingEmp.setName(employee.getName());
@@ -63,8 +67,10 @@ public class EmpServiceImpl implements EmpService {
         return "Employee updated successfully";
     }
 
+    @SuppressWarnings("null")
     @Override
     public Employee readEmployee(Long id) {
+        @SuppressWarnings("null")
         EmpEntity emp = empRepo.findById(id).get();
 
         Employee employee = new Employee();
